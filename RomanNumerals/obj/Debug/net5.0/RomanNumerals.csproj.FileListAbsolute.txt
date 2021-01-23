@@ -1,0 +1,16 @@
+C:\Users\brend\workspace\csharp\algorithmPractice\RomanNumerals\bin\Debug\net5.0\RomanNumerals.exe
+C:\Users\brend\workspace\csharp\algorithmPractice\RomanNumerals\bin\Debug\net5.0\RomanNumerals.deps.json
+C:\Users\brend\workspace\csharp\algorithmPractice\RomanNumerals\bin\Debug\net5.0\RomanNumerals.runtimeconfig.json
+C:\Users\brend\workspace\csharp\algorithmPractice\RomanNumerals\bin\Debug\net5.0\RomanNumerals.runtimeconfig.dev.json
+C:\Users\brend\workspace\csharp\algorithmPractice\RomanNumerals\bin\Debug\net5.0\RomanNumerals.dll
+C:\Users\brend\workspace\csharp\algorithmPractice\RomanNumerals\bin\Debug\net5.0\ref\RomanNumerals.dll
+C:\Users\brend\workspace\csharp\algorithmPractice\RomanNumerals\bin\Debug\net5.0\RomanNumerals.pdb
+C:\Users\brend\workspace\csharp\algorithmPractice\RomanNumerals\obj\Debug\net5.0\RomanNumerals.csprojAssemblyReference.cache
+C:\Users\brend\workspace\csharp\algorithmPractice\RomanNumerals\obj\Debug\net5.0\RomanNumerals.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\brend\workspace\csharp\algorithmPractice\RomanNumerals\obj\Debug\net5.0\RomanNumerals.AssemblyInfoInputs.cache
+C:\Users\brend\workspace\csharp\algorithmPractice\RomanNumerals\obj\Debug\net5.0\RomanNumerals.AssemblyInfo.cs
+C:\Users\brend\workspace\csharp\algorithmPractice\RomanNumerals\obj\Debug\net5.0\RomanNumerals.csproj.CoreCompileInputs.cache
+C:\Users\brend\workspace\csharp\algorithmPractice\RomanNumerals\obj\Debug\net5.0\RomanNumerals.dll
+C:\Users\brend\workspace\csharp\algorithmPractice\RomanNumerals\obj\Debug\net5.0\ref\RomanNumerals.dll
+C:\Users\brend\workspace\csharp\algorithmPractice\RomanNumerals\obj\Debug\net5.0\RomanNumerals.pdb
+C:\Users\brend\workspace\csharp\algorithmPractice\RomanNumerals\obj\Debug\net5.0\RomanNumerals.genruntimeconfig.cache

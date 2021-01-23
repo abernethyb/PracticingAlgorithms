@@ -1,0 +1,16 @@
+C:\Users\brend\workspace\csharp\algorithmPractice\DefangIp\bin\Debug\net5.0\DefangIp.exe
+C:\Users\brend\workspace\csharp\algorithmPractice\DefangIp\bin\Debug\net5.0\DefangIp.deps.json
+C:\Users\brend\workspace\csharp\algorithmPractice\DefangIp\bin\Debug\net5.0\DefangIp.runtimeconfig.json
+C:\Users\brend\workspace\csharp\algorithmPractice\DefangIp\bin\Debug\net5.0\DefangIp.runtimeconfig.dev.json
+C:\Users\brend\workspace\csharp\algorithmPractice\DefangIp\bin\Debug\net5.0\DefangIp.dll
+C:\Users\brend\workspace\csharp\algorithmPractice\DefangIp\bin\Debug\net5.0\ref\DefangIp.dll
+C:\Users\brend\workspace\csharp\algorithmPractice\DefangIp\bin\Debug\net5.0\DefangIp.pdb
+C:\Users\brend\workspace\csharp\algorithmPractice\DefangIp\obj\Debug\net5.0\DefangIp.csprojAssemblyReference.cache
+C:\Users\brend\workspace\csharp\algorithmPractice\DefangIp\obj\Debug\net5.0\DefangIp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\brend\workspace\csharp\algorithmPractice\DefangIp\obj\Debug\net5.0\DefangIp.AssemblyInfoInputs.cache
+C:\Users\brend\workspace\csharp\algorithmPractice\DefangIp\obj\Debug\net5.0\DefangIp.AssemblyInfo.cs
+C:\Users\brend\workspace\csharp\algorithmPractice\DefangIp\obj\Debug\net5.0\DefangIp.csproj.CoreCompileInputs.cache
+C:\Users\brend\workspace\csharp\algorithmPractice\DefangIp\obj\Debug\net5.0\DefangIp.dll
+C:\Users\brend\workspace\csharp\algorithmPractice\DefangIp\obj\Debug\net5.0\ref\DefangIp.dll
+C:\Users\brend\workspace\csharp\algorithmPractice\DefangIp\obj\Debug\net5.0\DefangIp.pdb
+C:\Users\brend\workspace\csharp\algorithmPractice\DefangIp\obj\Debug\net5.0\DefangIp.genruntimeconfig.cache
