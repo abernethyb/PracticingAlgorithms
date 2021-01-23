@@ -6,54 +6,52 @@ namespace RomanNumerals
 {
     class Program
     {
-        //in progress...
+
         static void Main(string[] args)
         {
             Console.WriteLine("Convert roman numerals to numbers.");
-            RomanToInt("MMXIX");
+            RomanToInt("MCMXCVI");
 
         }
-        static void RomanToInt(string inputString)
+        public static int RomanToInt(string inputString)
         {
+            //converting string to array of characters and then to list
             char[] inputarray = inputString.ToArray();
             List<char> numeralList = inputarray.ToList();
+
+            // an empty list to store numbers after they have been converted
             List<int> numbers = new List<int>
             {
 
             };
+            //this will hold the final sum
             int sum = 0;
 
+            // convert numerals to integers
             for (int i = 0; i < numeralList.Count; i++)
             {
                 switch (numeralList[i])
                 {
                     case 'I':
                         numbers.Add(1);
-                        Console.WriteLine("1");
                         break;
                     case 'V':
                         numbers.Add(5);
-                        Console.WriteLine("5");
                         break;
                     case 'X':
                         numbers.Add(10);
-                        Console.WriteLine("10");
                         break;
                     case 'L':
                         numbers.Add(50);
-                        Console.WriteLine("50");
                         break;
                     case 'C':
                         numbers.Add(100);
-                        Console.WriteLine("100");
                         break;
                     case 'D':
                         numbers.Add(500);
-                        Console.WriteLine("500");
                         break;
                     case 'M':
                         numbers.Add(1000);
-                        Console.WriteLine("1000");
                         break;
 
                 }
@@ -64,16 +62,12 @@ namespace RomanNumerals
             //remove subtraction instances
             for (int i = 0; i < numbers.Count; i++)
             {
-                for (int j = 0; j < numbers.Count; j++)
-                {
-                    Console.WriteLine($"first loop: corrent numbers: {numbers[j]}");
-                };
+
                 int firstNum = numbers[i];
                 int secondNum = 0;
 
                 try
                 {
-                    Console.WriteLine($"i: {numbers[i]}");
                     secondNum = numbers[i + 1];
                     Console.WriteLine($"firstNum: {firstNum}");
                     Console.WriteLine($"secondNum: {secondNum}");
@@ -84,230 +78,100 @@ namespace RomanNumerals
                             if (firstNum == 1)
                             {
                                 currentSum = 4;
-                                Console.WriteLine($"i value: {numbers[i]}");
-                                Console.WriteLine($"i actual: {i}");
-                                Console.WriteLine($"Removing {numbers[i]}");
                                 numbers.RemoveAt(i);
-                                Console.WriteLine($"Removing {numbers[i]}");
                                 numbers.RemoveAt(i);
+                                //adjusting increment count after removing numbers
                                 i--;
                             }
-                            // else
-                            // {
-                            //     currentSum = firstNum + secondNum;
-                            // }
                             break;
                         case 10:
                             if (firstNum == 1)
                             {
                                 currentSum = 9;
-                                Console.WriteLine($"i value: {numbers[i]}");
-                                Console.WriteLine($"i actual: {i}");
-                                Console.WriteLine($"Removing {numbers[i]}");
                                 numbers.RemoveAt(i);
-                                Console.WriteLine($"Removing {numbers[i]}");
                                 numbers.RemoveAt(i);
                                 i--;
 
                             }
-                            // else
-                            // {
-                            //     currentSum = firstNum + secondNum;
-                            // }
                             break;
                         case 50:
                             if (firstNum == 10)
                             {
                                 currentSum = 40;
-                                Console.WriteLine($"i value: {numbers[i]}");
-                                Console.WriteLine($"i actual: {i}");
-                                Console.WriteLine($"Removing {numbers[i]}");
                                 numbers.RemoveAt(i);
-                                Console.WriteLine($"Removing {numbers[i]}");
                                 numbers.RemoveAt(i);
                                 i--;
                             }
-                            // else
-                            // {
-                            //     currentSum = firstNum + secondNum;
-                            // }
                             break;
                         case 100:
                             if (firstNum == 10)
                             {
                                 currentSum = 90;
-                                Console.WriteLine($"i value: {numbers[i]}");
-                                Console.WriteLine($"i actual: {i}");
-                                Console.WriteLine($"Removing {numbers[i]}");
                                 numbers.RemoveAt(i);
-                                Console.WriteLine($"Removing {numbers[i]}");
                                 numbers.RemoveAt(i);
                                 i--;
                             }
-                            // else
-                            // {
-                            //     currentSum = firstNum + secondNum;
-                            // }
                             break;
                         case 500:
                             if (firstNum == 100)
                             {
                                 currentSum = 400;
-                                Console.WriteLine($"i value: {numbers[i]}");
-                                Console.WriteLine($"i actual: {i}");
-                                Console.WriteLine($"Removing {numbers[i]}");
                                 numbers.RemoveAt(i);
-                                Console.WriteLine($"Removing {numbers[i]}");
                                 numbers.RemoveAt(i);
                                 i--;
                             }
-                            // else
-                            // {
-                            //     currentSum = firstNum + secondNum;
-                            // }
                             break;
                         case 1000:
                             if (firstNum == 100)
                             {
                                 currentSum = 900;
-                                Console.WriteLine($"i value: {numbers[i]}");
-                                Console.WriteLine($"i actual: {i}");
-                                Console.WriteLine($"Removing {numbers[i]}");
                                 numbers.RemoveAt(i);
-                                Console.WriteLine($"Removing {numbers[i]}");
                                 numbers.RemoveAt(i);
                                 i--;
                             }
-                            // else
-                            // {
-                            //     currentSum = firstNum + secondNum;
-                            // }
                             break;
-                            // default:
-                            //     currentSum = firstNum + secondNum;
-                            //     break;
 
                     }
 
                 }
                 catch (System.ArgumentOutOfRangeException)
                 {
-                    Console.WriteLine("that was out of range");
-                    //currentSum = firstNum;
+                    //Console.WriteLine("that was out of range");
                 }
                 sum += currentSum;
 
-                Console.WriteLine($"sum: {sum}");
+                Console.WriteLine($"First sum: {sum}");
+
             }
 
             //add remaining normal addition cases
             for (int i = 0; i < numbers.Count; i += 2)
             {
-                for (int j = 0; j < numbers.Count; j++)
-                {
-                    Console.WriteLine($"second loop: corrent numbers: {numbers[j]}");
-                };
+
                 int firstNum = numbers[i];
                 int secondNum = 0;
 
                 try
                 {
-                    Console.WriteLine($"i: {numbers[i]}");
-                    Console.WriteLine($"i + 1: {numbers[i]}");
                     secondNum = numbers[i + 1];
+                    currentSum = firstNum + secondNum;
                     Console.WriteLine($"firstNum: {firstNum}");
                     Console.WriteLine($"secondNum: {secondNum}");
-                    currentSum = firstNum + secondNum;
-                    // switch (secondNum)
-                    // {
-                    //     case 5:
-                    //         if (firstNum == 1)
-                    //         {
-                    //             currentSum = 4;
-                    //             numbers.RemoveAt(numbers[i]);
-                    //             numbers.RemoveAt(numbers[i + 1]);
-                    //         }
-                    //         // else
-                    //         // {
-                    //         //     currentSum = firstNum + secondNum;
-                    //         // }
-                    //         break;
-                    //     case 10:
-                    //         if (firstNum == 1)
-                    //         {
-                    //             currentSum = 9;
-                    //             numbers.RemoveAt(numbers[i]);
-                    //             numbers.RemoveAt(numbers[i + 1]);
-                    //         }
-                    //         // else
-                    //         // {
-                    //         //     currentSum = firstNum + secondNum;
-                    //         // }
-                    //         break;
-                    //     case 50:
-                    //         if (firstNum == 10)
-                    //         {
-                    //             currentSum = 40;
-                    //             numbers.RemoveAt(numbers[i]);
-                    //             numbers.RemoveAt(numbers[i + 1]);
-                    //         }
-                    //         // else
-                    //         // {
-                    //         //     currentSum = firstNum + secondNum;
-                    //         // }
-                    //         break;
-                    //     case 100:
-                    //         if (firstNum == 10)
-                    //         {
-                    //             currentSum = 90;
-                    //             numbers.RemoveAt(numbers[i]);
-                    //             numbers.RemoveAt(numbers[i + 1]);
-                    //         }
-                    //         // else
-                    //         // {
-                    //         //     currentSum = firstNum + secondNum;
-                    //         // }
-                    //         break;
-                    //     case 500:
-                    //         if (firstNum == 100)
-                    //         {
-                    //             currentSum = 400;
-                    //             numbers.RemoveAt(numbers[i]);
-                    //             numbers.RemoveAt(numbers[i + 1]);
-                    //         }
-                    //         // else
-                    //         // {
-                    //         //     currentSum = firstNum + secondNum;
-                    //         // }
-                    //         break;
-                    //     case 1000:
-                    //         if (firstNum == 100)
-                    //         {
-                    //             currentSum = 900;
-                    //             numbers.RemoveAt(numbers[i]);
-                    //             numbers.RemoveAt(numbers[i + 1]);
-                    //         }
-                    //         // else
-                    //         // {
-                    //         //     currentSum = firstNum + secondNum;
-                    //         // }
-                    //         break;
-                    //         // default:
-                    //         //     currentSum = firstNum + secondNum;
-                    //         //     break;
-
-                    // }
 
                 }
                 catch (System.ArgumentOutOfRangeException)
                 {
-                    Console.WriteLine("that was out of range");
+                    // Console.WriteLine("that was out of range");
                     currentSum = firstNum;
                 }
                 sum += currentSum;
 
-                Console.WriteLine($"sum: {sum}");
+                // Console.WriteLine($"sum: {sum}");
+                Console.WriteLine($"second sum: {sum}");
+
             }
+            Console.WriteLine($"Returned sum: {sum}");
+            return sum;
         }
 
     }
