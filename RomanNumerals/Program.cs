@@ -139,6 +139,7 @@ namespace RomanNumerals
                     //Console.WriteLine("that was out of range");
                 }
                 sum += currentSum;
+                currentSum = 0;
 
                 Console.WriteLine($"First sum: {sum}");
 
