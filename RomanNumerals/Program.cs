@@ -10,7 +10,7 @@ namespace RomanNumerals
         static void Main(string[] args)
         {
             Console.WriteLine("Convert roman numerals to numbers.");
-            RomanToInt("MCMXCVI");
+            RomanToInt("MMXIX");
 
         }
         public static int RomanToInt(string inputString)
@@ -69,8 +69,6 @@ namespace RomanNumerals
                 try
                 {
                     secondNum = numbers[i + 1];
-                    Console.WriteLine($"firstNum: {firstNum}");
-                    Console.WriteLine($"secondNum: {secondNum}");
 
                     switch (secondNum)
                     {
@@ -141,34 +139,13 @@ namespace RomanNumerals
                 sum += currentSum;
                 currentSum = 0;
 
-                Console.WriteLine($"First sum: {sum}");
-
             }
 
             //add remaining normal addition cases
-            for (int i = 0; i < numbers.Count; i += 2)
+            for (int i = 0; i < numbers.Count; i++)
             {
 
-                int firstNum = numbers[i];
-                int secondNum = 0;
-
-                try
-                {
-                    secondNum = numbers[i + 1];
-                    currentSum = firstNum + secondNum;
-                    Console.WriteLine($"firstNum: {firstNum}");
-                    Console.WriteLine($"secondNum: {secondNum}");
-
-                }
-                catch (System.ArgumentOutOfRangeException)
-                {
-                    // Console.WriteLine("that was out of range");
-                    currentSum = firstNum;
-                }
-                sum += currentSum;
-
-                // Console.WriteLine($"sum: {sum}");
-                Console.WriteLine($"second sum: {sum}");
+                sum += numbers[i];
 
             }
             Console.WriteLine($"Returned sum: {sum}");
