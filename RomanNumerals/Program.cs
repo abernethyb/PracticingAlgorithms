@@ -10,7 +10,34 @@ namespace RomanNumerals
         static void Main(string[] args)
         {
             Console.WriteLine("Convert roman numerals to numbers.");
-            RomanToInt("MMXIX");
+            Console.WriteLine("press q to quit");
+            string inputNumeral = "";
+            string upperCaseInputNumeral = "";
+            while (upperCaseInputNumeral != "Q")
+            {
+                Console.Write("Enter a valid Roman Numeral: ");
+                inputNumeral = Console.ReadLine();
+                upperCaseInputNumeral = inputNumeral.ToUpper();
+
+                if (upperCaseInputNumeral != "Q")
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine("");
+                    Console.Write($"You Entered: {upperCaseInputNumeral} ");
+                    Console.WriteLine("");
+                    Console.Beep();
+                    RomanToInt(upperCaseInputNumeral);
+                    Console.WriteLine("");
+                    Console.WriteLine("press q to quit");
+                    Console.WriteLine("");
+                    Console.WriteLine("");
+                }
+                else
+                {
+                    Console.WriteLine("Thanks for playing!");
+                }
+
+            }
 
         }
         public static int RomanToInt(string inputString)
@@ -57,7 +84,7 @@ namespace RomanNumerals
                 }
 
             }
-            // a running sum of numbers added in for loops
+            // a running sum of numbers added in loop
             int currentSum = 0;
             //remove subtraction instances
             for (int i = 0; i < numbers.Count; i++)
