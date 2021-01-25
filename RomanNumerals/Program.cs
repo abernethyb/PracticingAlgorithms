@@ -57,12 +57,12 @@ namespace RomanNumerals
                     }
                     else
                     {
-                        Console.WriteLine("Thanks for playing!");
+                        Console.WriteLine("Vale!");
                     }
                 }
 
             }
-            else
+            else if (ucChoice == "I")
             {
                 Console.WriteLine("Convert a number to roman numerals.");
                 Console.WriteLine("press q to quit");
@@ -104,10 +104,14 @@ namespace RomanNumerals
 
                     else
                     {
-                        Console.WriteLine("Thanks for playing!");
+                        Console.WriteLine("Vale!");
                     }
 
                 }
+            }
+            else
+            {
+                Console.WriteLine("Vale!");
             }
 
         }

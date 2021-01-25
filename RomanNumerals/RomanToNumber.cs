@@ -141,7 +141,7 @@ namespace RomanNumerals
                 sum += numbers[i];
 
             }
-            Console.WriteLine($"Returned sum: {sum}");
+            Console.WriteLine($"If you're not a Roman, that's: {sum}");
             return sum;
         }
 
