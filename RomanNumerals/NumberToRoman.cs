@@ -84,14 +84,13 @@ namespace RomanNumerals
                 }
             }
 
-            for (int i = 0; i < numeralList.Count; i++)
-            {
-                Console.WriteLine(numeralList[i]);
-            }
+            //convert list to string 
 
-            //convert array to string 
+            string numeral = string.Join("", numeralList);
+            Console.Write("Numeral: ");
+            Console.WriteLine(numeral);
 
-            return "";
+            return numeral;
         }
 
     }
