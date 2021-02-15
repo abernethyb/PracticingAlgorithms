@@ -1,0 +1,16 @@
+C:\Users\brend\workspace\csharp\algorithmPractice\adventofcode\sum2020\bin\Debug\net5.0\sum2020.exe
+C:\Users\brend\workspace\csharp\algorithmPractice\adventofcode\sum2020\bin\Debug\net5.0\sum2020.deps.json
+C:\Users\brend\workspace\csharp\algorithmPractice\adventofcode\sum2020\bin\Debug\net5.0\sum2020.runtimeconfig.json
+C:\Users\brend\workspace\csharp\algorithmPractice\adventofcode\sum2020\bin\Debug\net5.0\sum2020.runtimeconfig.dev.json
+C:\Users\brend\workspace\csharp\algorithmPractice\adventofcode\sum2020\bin\Debug\net5.0\sum2020.dll
+C:\Users\brend\workspace\csharp\algorithmPractice\adventofcode\sum2020\bin\Debug\net5.0\ref\sum2020.dll
+C:\Users\brend\workspace\csharp\algorithmPractice\adventofcode\sum2020\bin\Debug\net5.0\sum2020.pdb
+C:\Users\brend\workspace\csharp\algorithmPractice\adventofcode\sum2020\obj\Debug\net5.0\sum2020.csprojAssemblyReference.cache
+C:\Users\brend\workspace\csharp\algorithmPractice\adventofcode\sum2020\obj\Debug\net5.0\sum2020.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\brend\workspace\csharp\algorithmPractice\adventofcode\sum2020\obj\Debug\net5.0\sum2020.AssemblyInfoInputs.cache
+C:\Users\brend\workspace\csharp\algorithmPractice\adventofcode\sum2020\obj\Debug\net5.0\sum2020.AssemblyInfo.cs
+C:\Users\brend\workspace\csharp\algorithmPractice\adventofcode\sum2020\obj\Debug\net5.0\sum2020.csproj.CoreCompileInputs.cache
+C:\Users\brend\workspace\csharp\algorithmPractice\adventofcode\sum2020\obj\Debug\net5.0\sum2020.dll
+C:\Users\brend\workspace\csharp\algorithmPractice\adventofcode\sum2020\obj\Debug\net5.0\ref\sum2020.dll
+C:\Users\brend\workspace\csharp\algorithmPractice\adventofcode\sum2020\obj\Debug\net5.0\sum2020.pdb
+C:\Users\brend\workspace\csharp\algorithmPractice\adventofcode\sum2020\obj\Debug\net5.0\sum2020.genruntimeconfig.cache
