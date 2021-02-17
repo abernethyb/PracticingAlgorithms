@@ -12,51 +12,54 @@ namespace treeCollisions
             string commaInput = input.input.Replace("\r\n", ",");
             List<string> inputList = commaInput.Split(",").ToList();
 
-            int linePosition = 0;
-            //int listPosition = 0;
-            int treeCollisons = 0;
-
-            foreach (string line in inputList)
+            string stringRunInput = "";
+            string stringRiseInput = "";
+            while (stringRunInput != "q" || stringRunInput != "Q")
             {
+                int linePosition = 0;
+                int treeCollisons = 0;
 
-                if (line[linePosition] == '#')
+                Console.Write("Enter slope run or q to exit: ");
+
+                stringRunInput = Console.ReadLine();
+
+                Console.Write("Enter slope rise q to exit: ");
+
+                stringRiseInput = Console.ReadLine();
+
+                int runInput = Int32.Parse(stringRunInput);
+
+                int riseInput = Int32.Parse(stringRiseInput);
+
+                Console.WriteLine($"right {runInput}, down: {riseInput}");
+
+                for (int i = 0; i <= inputList.Count() - 1; i += riseInput)
                 {
-                    //uncomment below for fun version
-                    //Console.WriteLine("OUCH!!");
-                    treeCollisons++;
-                }
-                ////uncomment below for fun version
-                // else
-                // {
+                    char[] line = inputList[i].ToCharArray();
+                    if (line[linePosition] == '#')
+                    {
+                        //uncomment below for fun version
+                        //Console.WriteLine("OUCH!!");
+                        treeCollisons++;
+                    }
+                    ////uncomment below for fun version
+                    // else
+                    // {
 
-                //     Console.WriteLine("PHEW!");
-                // }
+                    //     Console.WriteLine("PHEW!");
+                    // }
 
-                if (linePosition == line.Count() - 1)
-                {
-                    linePosition = 2;
+                    if (linePosition + runInput >= line.Count())
+                    {
+                        linePosition = linePosition - line.Count();
 
-                }
-                else if (linePosition == line.Count() - 2)
-                {
-                    linePosition = 1;
+                    }
 
-                }
-                else if (linePosition == line.Count() - 3)
-                {
-                    linePosition = 0;
+                    linePosition += runInput;
 
                 }
-                else
-                {
-                    linePosition += 3;
-                }
-
-                // listPosition++;
-                // Console.WriteLine(linePosition);
-                // Console.WriteLine(listPosition);
+                Console.WriteLine($"Total number of collisions with trees: {treeCollisons}");
             }
-            Console.WriteLine($"Total number of collisions with trees: {treeCollisons}");
 
         }
     }
