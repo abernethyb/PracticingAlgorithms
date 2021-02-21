@@ -11,73 +11,189 @@ namespace passports
             Input input = new Input();
             string commaInput = input.input.Replace("\r\n", ",");
             List<string> inputList = commaInput.Split(",,").ToList();
+            List<Passport> passportList = new List<Passport> { };
             int validPassports = 0;
 
-            //Console.WriteLine(commaInput);
-
-            //Console.WriteLine(input.input);
 
             foreach (string line in inputList)
             {
                 List<string> keys = new List<string> { };
-                // Console.WriteLine("top");
-                // Console.WriteLine(line);
 
                 string newline = line.Replace(",", ": ");
-                string newlineTwo = newline.Replace(" ", ":");
-                string newlineThree = newlineTwo.Replace("::", ":");
 
-                List<string> keyValues = newlineThree.Split(":").ToList();
-                //Console.WriteLine(newlineThree);
+                Passport passport = new Passport();
+
+                List<string> keyValues = newline.Split(" ").ToList();
                 foreach (string kv in keyValues)
                 {
-                    switch (kv)
-                    {
 
-                        case "ecl":
-                            keys.Add(kv);
-                            break;
-                        case "pid":
-                            keys.Add(kv);
-                            break;
-                        case "eyr":
-                            keys.Add(kv);
-                            break;
-                        case "hcl":
-                            keys.Add(kv);
-                            break;
-                        case "byr":
-                            keys.Add(kv);
-                            break;
-                        case "iyr":
-                            keys.Add(kv);
-                            break;
-                        case "cid":
-                            keys.Add(kv);
-                            break;
-                        case "hgt":
-                            keys.Add(kv);
-                            break;
+                    string kvNoTrail = kv.Trim(new Char[] { ' ', ':' });
+                    // Console.WriteLine(kvNoTrail);
+                    List<string> keyvValue = kvNoTrail.Split(":").ToList();
+
+                    string key = keyvValue[0];
+                    string value = keyvValue[1];
+
+                    if (key == "byr")
+                    {
+                        try
+                        {
+                            int intValue = Int32.Parse(value);
+                            //byr (Birth Year) - four digits; at least 1920 and at most 2002.
+                            if (intValue >= 1920 && intValue <= 2002)
+                            {
+                                passport.byr = intValue;
+                            }
+                        }
+                        catch (Exception)
+                        {
+
+                        }
+                    }
+                    if (key == "iyr")
+                    {
+                        try
+                        {
+                            int intValue = Int32.Parse(value);
+                            //iyr (Issue Year) - four digits; at least 2010 and at most 2020
+                            if (intValue >= 2010 && intValue <= 2020)
+                            {
+                                passport.iyr = intValue;
+                            }
+                        }
+                        catch (Exception)
+                        {
+
+                        }
+                    }
+                    if (key == "eyr")
+                    {
+                        try
+                        {
+                            int intValue = Int32.Parse(value);
+                            //eyr (Expiration Year) - four digits; at least 2020 and at most 2030.
+                            if (intValue >= 2020 && intValue <= 2030)
+                            {
+                                passport.eyr = intValue;
+                            }
+                        }
+                        catch (Exception)
+                        {
+
+                        }
+                    }
+                    if (key == "hgt")
+                    {
+                        if (value.Contains("cm"))
+                        {
+                            string justNums = value.Remove(value.Length - 2);
+                            try
+                            {
+                                int intValue = Int32.Parse(justNums);
+                                //hgt (Height) - a number followed by either cm or in:
+                                //If cm, the number must be at least 150 and at most 193.
+
+                                //If in, the number must be at least 59 and at most 76.
+
+                                if (intValue >= 150 && intValue <= 193)
+                                {
+
+                                    passport.hgt = intValue;
+                                }
+                            }
+                            catch (Exception)
+                            {
+
+                            }
+
+                        }
+                        else if (value.Contains("in"))
+                        {
+                            string justNums = value.Remove(value.Length - 2);
+                            try
+                            {
+                                int intValue = Int32.Parse(justNums);
+                                //hgt (Height) - a number followed by either cm or in:
+                                //If cm, the number must be at least 150 and at most 193.
+
+                                //If in, the number must be at least 59 and at most 76.
+
+                                if (intValue >= 59 && intValue <= 76)
+                                {
+
+                                    passport.hgt = intValue;
+                                }
+                            }
+                            catch (Exception)
+                            {
+
+                            }
+
+                        }
 
                     }
+                    if (key == "hcl")
+                    {
+                        //hcl (Hair Color) - a # followed by exactly six characters 0-9 or a-f.
+                        //[a-fA-F0-9]$  
+                        if (value.StartsWith('#'))
+                        {
+                            char[] hclChar = value.ToCharArray();
+                            char[] allowedChar = { 'a', 'b', 'c', 'd', 'e', 'f', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
+                            string validChars = "";
+                            for (int i = 0; i < hclChar.Length; i++)
+                            {
 
-                    // Console.WriteLine("keytop");
-                    // Console.WriteLine(kv);
-                    // Console.WriteLine("keybottom");
+                                if (allowedChar.Contains(hclChar[i]))
+                                {
+                                    validChars += hclChar[i];
+                                }
+
+                            }
+                            if (validChars.Length == 6)
+                            {
+                                passport.hcl = validChars;
+                            }
+                        }
+
+                    }
+                    if (key == "ecl")
+                    {
+
+                        //ecl (Eye Color) - exactly one of: amb blu brn gry grn hzl oth.
+                        string[] allowedValues = { "amb", "blu", "brn", "gry", "grn", "hzl", "oth" };
+                        if (allowedValues.Contains(value))
+                        {
+                            passport.ecl = value;
+                        }
+
+                    }
+                    if (key == "pid")
+                    {
+                        if (value.Length == 9)
+                        {
+                            try
+                            {
+                                int intValue = Int32.Parse(value);
+                                //pid (Passport ID) - a nine-digit number, including leading zeroes.
+
+                                passport.pid = intValue;
+
+                            }
+                            catch (Exception)
+                            {
+
+                            }
+                        }
+                    }
+
                 }
-
-                // foreach (string key in keys)
-                // {
-                //     Console.WriteLine(key);
-                // }
-
-                // Console.WriteLine("bottom");
-                // Console.WriteLine("");
-
-                if (keys.Contains("ecl") && keys.Contains("pid") && keys.Contains("eyr") && keys.Contains("hcl") && keys.Contains("byr") && keys.Contains("iyr") && keys.Contains("hgt"))
+                if (passport.pid != null && passport.hgt != null && passport.ecl != null && passport.iyr != null && passport.eyr != null && passport.byr != null && passport.hcl != null)
                 {
+                    passportList.Add(passport);
                     validPassports++;
                 }
+
             }
 
             Console.WriteLine(validPassports);
