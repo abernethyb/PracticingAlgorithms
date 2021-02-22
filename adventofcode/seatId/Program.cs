@@ -17,42 +17,30 @@ namespace seatId
                 int[] rows = { 0, 127 };
                 int[] columns = { 0, 7 };
 
-                Console.WriteLine("");
                 char[] lineChar = line.ToCharArray();
-                //char[] lineChar = { 'F', 'B', 'F', 'B', 'B', 'F', 'F', 'R', 'L', 'R' };
-                //char[] lineChar = { 'B', 'F', 'F', 'F', 'B', 'B', 'F', 'R', 'R', 'R' };
 
                 for (int i = 0; i <= lineChar.Length - 1; i++)
                 {
-                    //Console.WriteLine(lineChar[i]);
 
                     if (lineChar[i] == 'F')
                     {
                         rows[1] = (rows[1] + rows[0]) / 2;
-                        //rows = rows - row;
-                        //Console.WriteLine(row);
-                        Console.WriteLine($"{rows[0]}, {rows[1]}");
+
                     }
                     else if (lineChar[i] == 'B')
                     {
                         rows[0] = (rows[1] + rows[0]) / 2 + 1;
-                        //rows = rows - row;
-                        //Console.WriteLine(row);
-                        Console.WriteLine($"{rows[0]}, {rows[1]}");
+
                     }
                     if (lineChar[i] == 'L')
                     {
                         columns[1] = (columns[1] + columns[0]) / 2;
-                        //rows = rows - row;
-                        //Console.WriteLine(row);
-                        Console.WriteLine($"{columns[0]}, {columns[1]}");
+
                     }
                     else if (lineChar[i] == 'R')
                     {
                         columns[0] = (columns[1] + columns[0]) / 2 + 1;
-                        //rows = rows - row;
-                        //Console.WriteLine(row);
-                        Console.WriteLine($"{columns[0]}, {columns[1]}");
+
                     }
                 }
                 int row = rows[0];
@@ -61,13 +49,20 @@ namespace seatId
                 int seatId = row * 8 + column;
                 seatIds.Add(seatId);
 
-                Console.WriteLine("");
-                Console.Write($"row: {row}, column: {column}. SeatID: {seatId}");
-                Console.WriteLine("");
             }
-            Console.WriteLine("");
-            Console.WriteLine("");
-            Console.WriteLine(seatIds.Max());
+
+            int[] idArray = seatIds.ToArray();
+            Array.Sort(idArray);
+            for (int i = 0; i <= idArray.Length - 1; i++)
+            {
+                //uncomment to see log of seats:
+                //Console.WriteLine($"modified i: {i+ idArray[0]}, seatId {idArray[i]}");
+                if (i + idArray[0] != idArray[i])
+                {
+                    Console.WriteLine(idArray[i] - 1);
+                    break;
+                }
+            }
         }
     }
 }
